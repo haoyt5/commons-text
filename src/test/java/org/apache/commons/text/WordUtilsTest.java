@@ -54,15 +54,7 @@ public class WordUtilsTest {
         assertThat(WordUtils.abbreviate("01 23 45 67 89", 9, -1, "abc")).isEqualTo("01 23 45 67abc");
         assertThat(WordUtils.abbreviate("01 23 45 67 89", 9, 10, "")).isEqualTo("01 23 45 6");
     }
-
-    // -----------------------------------------------------------------------
-    @Test
-    public void testAbbreviateForNullAndEmptyString() {
-        assertThat((WordUtils.abbreviate(null, 1, -1, ""))).isNull();
-        assertThat(WordUtils.abbreviate("", 1, -1, "")).isEqualTo(StringUtils.EMPTY);
-        assertThat(WordUtils.abbreviate("0123456790", 0, 0, "")).isEqualTo("");
-        assertThat(WordUtils.abbreviate(" 0123456790", 0, -1, "")).isEqualTo("");
-    }
+    
 
     // -----------------------------------------------------------------------
     @Test
