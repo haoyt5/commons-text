@@ -66,14 +66,6 @@ public class WordUtilsTest {
 
     // -----------------------------------------------------------------------
     @Test
-    public void testAbbreviateForUpperLimit() {
-        assertThat(WordUtils.abbreviate("0123456789", 0, 5, "")).isEqualTo("01234");
-        assertThat(WordUtils.abbreviate("012 3456789", 2, 5, "")).isEqualTo("012");
-        assertThat(WordUtils.abbreviate("0123456789", 0, -1, "")).isEqualTo("0123456789");
-    }
-
-    // -----------------------------------------------------------------------
-    @Test
     public void testAbbreviateForUpperLimitAndAppendedString() {
         assertThat(WordUtils.abbreviate("0123456789", 0, 5, "-")).isEqualTo("01234-");
         assertThat(WordUtils.abbreviate("012 3456789", 2, 5, null)).isEqualTo("012");
