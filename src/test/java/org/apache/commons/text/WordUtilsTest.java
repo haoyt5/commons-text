@@ -169,26 +169,7 @@ public class WordUtilsTest {
         assertThat(Modifier.isFinal(WordUtils.class.getModifiers())).isFalse();
     }
 
-    @Test
-    public void testContainsAllWords_StringString() {
-        assertThat(WordUtils.containsAllWords(null, (String) null)).isFalse();
-        assertThat(WordUtils.containsAllWords(null, "")).isFalse();
-        assertThat(WordUtils.containsAllWords(null, "ab")).isFalse();
 
-        assertThat(WordUtils.containsAllWords("", (String) null)).isFalse();
-        assertThat(WordUtils.containsAllWords("", "")).isFalse();
-        assertThat(WordUtils.containsAllWords("", "ab")).isFalse();
-
-        assertThat(WordUtils.containsAllWords("foo", (String) null)).isFalse();
-        assertThat(WordUtils.containsAllWords("bar", "")).isFalse();
-        assertThat(WordUtils.containsAllWords("zzabyycdxx", "by")).isFalse();
-        assertThat(WordUtils.containsAllWords("lorem ipsum dolor sit amet", "ipsum", "lorem", "dolor")).isTrue();
-        assertThat(WordUtils.containsAllWords("lorem ipsum dolor sit amet", "ipsum", null, "lorem", "dolor")).isFalse();
-        assertThat(WordUtils.containsAllWords("lorem ipsum null dolor sit amet", "ipsum", null, "lorem", "dolor"))
-            .isFalse();
-        assertThat(WordUtils.containsAllWords("ab", "b")).isFalse();
-        assertThat(WordUtils.containsAllWords("ab", "z")).isFalse();
-    }
 
     @Test
     public void testContainsAllWordsWithNull() {

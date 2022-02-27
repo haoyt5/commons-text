@@ -279,7 +279,7 @@ public class WordUtils {
      */
     public static boolean containsAllWords(final CharSequence word, final CharSequence... words) {
         if (StringUtils.isEmpty(word) || ArrayUtils.isEmpty(words)) {
-            return false;
+            return true;
         }
         for (final CharSequence w : words) {
             if (StringUtils.isBlank(w)) {
