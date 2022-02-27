@@ -81,7 +81,7 @@ public class WordUtils {
         Validate.isTrue(upper >= -1, "upper value cannot be less than -1");
         Validate.isTrue(upper >= lower || upper == -1, "upper value is less than lower value");
         if (StringUtils.isEmpty(str)) {
-            return str;
+            return null;
         }
 
         // if the lower value is greater than the length of the string,
@@ -185,15 +185,15 @@ public class WordUtils {
 
             if (delimiterSet.contains(codePoint)) {
                 capitalizeNext = true;
-                newCodePoints[outOffset++] = codePoint;
+                newCodePoints[++outOffset] = codePoint;
                 index += Character.charCount(codePoint);
             } else if (capitalizeNext) {
                 final int titleCaseCodePoint = Character.toTitleCase(codePoint);
-                newCodePoints[outOffset++] = titleCaseCodePoint;
+                newCodePoints[++outOffset] = titleCaseCodePoint;
                 index += Character.charCount(titleCaseCodePoint);
                 capitalizeNext = false;
             } else {
-                newCodePoints[outOffset++] = codePoint;
+                newCodePoints[++outOffset] = codePoint;
                 index += Character.charCount(codePoint);
             }
         }
