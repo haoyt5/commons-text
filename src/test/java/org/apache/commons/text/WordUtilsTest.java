@@ -79,41 +79,6 @@ public class WordUtilsTest {
 
     // -----------------------------------------------------------------------
     @Test
-    public void testCapitalize_String() {
-        assertThat(WordUtils.capitalize(null)).isNull();
-        assertThat(WordUtils.capitalize("")).isEqualTo("");
-        assertThat(WordUtils.capitalize("  ")).isEqualTo("  ");
-
-        assertThat(WordUtils.capitalize("I")).isEqualTo("I");
-        assertThat(WordUtils.capitalize("i")).isEqualTo("I");
-        assertThat(WordUtils.capitalize("i am here 123")).isEqualTo("I Am Here 123");
-        assertThat(WordUtils.capitalize("I Am Here 123")).isEqualTo("I Am Here 123");
-        assertThat(WordUtils.capitalize("i am HERE 123")).isEqualTo("I Am HERE 123");
-        assertThat(WordUtils.capitalize("I AM HERE 123")).isEqualTo("I AM HERE 123");
-    }
-
-
-
-    @Test
-    public void testCapitalizeWithDelimiters_String() {
-        assertThat(WordUtils.capitalize(null, null)).isNull();
-        assertThat(WordUtils.capitalize("", ArrayUtils.EMPTY_CHAR_ARRAY)).isEqualTo("");
-        assertThat(WordUtils.capitalize("  ", ArrayUtils.EMPTY_CHAR_ARRAY)).isEqualTo("  ");
-
-        char[] chars = new char[] {'-', '+', ' ', '@'};
-        assertThat(WordUtils.capitalize("I", chars)).isEqualTo("I");
-        assertThat(WordUtils.capitalize("i", chars)).isEqualTo("I");
-        assertThat(WordUtils.capitalize("i-am here+123", chars)).isEqualTo("I-Am Here+123");
-        assertThat(WordUtils.capitalize("I Am+Here-123", chars)).isEqualTo("I Am+Here-123");
-        assertThat(WordUtils.capitalize("i+am-HERE 123", chars)).isEqualTo("I+Am-HERE 123");
-        assertThat(WordUtils.capitalize("I-AM HERE+123", chars)).isEqualTo("I-AM HERE+123");
-        chars = new char[] {'.'};
-        assertThat(WordUtils.capitalize("i aM.fine", chars)).isEqualTo("I aM.Fine");
-        assertThat(WordUtils.capitalize("i am.fine", null)).isEqualTo("I Am.fine");
-    }
-
-    // -----------------------------------------------------------------------
-    @Test
     public void testConstructor() {
         assertThat(new WordUtils()).isNotNull();
         final Constructor<?>[] cons = WordUtils.class.getDeclaredConstructors();
