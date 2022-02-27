@@ -92,45 +92,7 @@ public class WordUtilsTest {
         assertThat(WordUtils.capitalize("I AM HERE 123")).isEqualTo("I AM HERE 123");
     }
 
-    @Test
-    public void testCapitalizeFully_String() {
-        assertThat(WordUtils.capitalizeFully(null)).isNull();
-        assertThat(WordUtils.capitalizeFully("")).isEqualTo("");
-        assertThat(WordUtils.capitalizeFully("  ")).isEqualTo("  ");
 
-        assertThat(WordUtils.capitalizeFully("I")).isEqualTo("I");
-        assertThat(WordUtils.capitalizeFully("i")).isEqualTo("I");
-        assertThat(WordUtils.capitalizeFully("i am here 123")).isEqualTo("I Am Here 123");
-        assertThat(WordUtils.capitalizeFully("I Am Here 123")).isEqualTo("I Am Here 123");
-        assertThat(WordUtils.capitalizeFully("i am HERE 123")).isEqualTo("I Am Here 123");
-        assertThat(WordUtils.capitalizeFully("I AM HERE 123")).isEqualTo("I Am Here 123");
-        assertThat(WordUtils.capitalizeFully("alphabet")).isEqualTo("Alphabet"); // single word
-    }
-
-    @Test
-    public void testCapitalizeFully_Text88() {
-        assertThat(WordUtils.capitalizeFully("i am fine now", new char[] {})).isEqualTo("I am fine now");
-    }
-
-    @Test
-    public void testCapitalizeFullyWithDelimiters_String() {
-        assertThat(WordUtils.capitalizeFully(null, null)).isNull();
-        assertThat(WordUtils.capitalizeFully("", ArrayUtils.EMPTY_CHAR_ARRAY)).isEqualTo("");
-        assertThat(WordUtils.capitalizeFully("  ", ArrayUtils.EMPTY_CHAR_ARRAY)).isEqualTo("  ");
-
-        char[] chars = new char[] {'-', '+', ' ', '@'};
-        assertThat(WordUtils.capitalizeFully("I", chars)).isEqualTo("I");
-        assertThat(WordUtils.capitalizeFully("i", chars)).isEqualTo("I");
-        assertThat(WordUtils.capitalizeFully("i-am here+123", chars)).isEqualTo("I-Am Here+123");
-        assertThat(WordUtils.capitalizeFully("I Am+Here-123", chars)).isEqualTo("I Am+Here-123");
-        assertThat(WordUtils.capitalizeFully("i+am-HERE 123", chars)).isEqualTo("I+Am-Here 123");
-        assertThat(WordUtils.capitalizeFully("I-AM HERE+123", chars)).isEqualTo("I-Am Here+123");
-        chars = new char[] {'.'};
-        assertThat(WordUtils.capitalizeFully("i aM.fine", chars)).isEqualTo("I am.Fine");
-        assertThat(WordUtils.capitalizeFully("i am.fine", null)).isEqualTo("I Am.fine");
-        assertThat(WordUtils.capitalizeFully("alphabet", null)).isEqualTo("Alphabet"); // single word
-        assertThat(WordUtils.capitalizeFully("alphabet", new char[] {'!'})).isEqualTo("Alphabet"); // no matching delim
-    }
 
     @Test
     public void testCapitalizeWithDelimiters_String() {
