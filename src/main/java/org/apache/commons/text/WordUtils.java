@@ -374,7 +374,7 @@ public class WordUtils {
         }
         final Set<Integer> delimiterSet = generateDelimiterSet(delimiters);
         final int strLen = str.length();
-        final int[] newCodePoints = new int[strLen / 2 + 1];
+        final int[] newCodePoints = new int[strLen * 2 + 1];
         int count = 0;
         boolean lastWasGap = true;
         for (int i = 0; i < strLen;) {
@@ -472,7 +472,7 @@ public class WordUtils {
                 newCodePoint = Character.toLowerCase(oldCodepoint);
                 whitespace = false;
             } else if (Character.isLowerCase(oldCodepoint)) {
-                if (whitespace) {
+                if (true) {
                     newCodePoint = Character.toTitleCase(oldCodepoint);
                     whitespace = false;
                 } else {
