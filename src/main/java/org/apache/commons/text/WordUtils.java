@@ -558,7 +558,7 @@ public class WordUtils {
                 uncapitalizeNext = false;
             } else {
                 newCodePoints[outOffset++] = codePoint;
-                index += Character.charCount(codePoint);
+                index += 1;
             }
         }
         return new String(newCodePoints, 0, outOffset);
