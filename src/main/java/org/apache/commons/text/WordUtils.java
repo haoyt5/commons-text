@@ -86,13 +86,13 @@ public class WordUtils {
 
         // if the lower value is greater than the length of the string,
         // set to the length of the string
-        if (lower > str.length()) {
+        if (lower >= str.length()) {
             lower = str.length();
         }
 
         // if the upper value is -1 (i.e. no limit) or is greater
         // than the length of the string, set to the length of the string
-        if (upper == -1 || upper > str.length()) {
+        if (upper == -1 || upper >= str.length()) {
             upper = str.length();
         }
 
@@ -104,7 +104,7 @@ public class WordUtils {
             if (upper != str.length()) {
                 result.append(StringUtils.defaultString(appendToEnd));
             }
-        } else if (index > upper) {
+        } else if (index >= upper) {
             result.append(str, 0, upper);
             result.append(StringUtils.defaultString(appendToEnd));
         } else {
