@@ -252,7 +252,7 @@ public class WordUtils {
         if (StringUtils.isEmpty(str)) {
             return str;
         }
-        str = str.toLowerCase();
+        str = str.toLowerCase() + " ";
         return capitalize(str, delimiters);
     }
 
