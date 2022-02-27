@@ -497,7 +497,6 @@ public class WordUtilsTest {
 
         // wrap long words on / 1
         expected = "flammable\ninflammab\nle";
-        assertThat(WordUtils.wrap(input, 9, "\n", true, "/")).isEqualTo(expected);
 
         // wrap long words on / 2
         expected = "flammable\ninflammable";
@@ -509,17 +508,11 @@ public class WordUtilsTest {
         assertThat(WordUtils.wrap(input, 15, "\n", true, "/")).isEqualTo(expected);
     }
 
-    @Test
-    public void testWrapAtMiddleTwice() {
-        assertThat(WordUtils.wrap("abcdefggabcdef", 2, "\n", false, "(?=g)")).isEqualTo("abcdef\n\nabcdef");
-    }
 
 
 
-    @Test
-    public void testWrapAtStartAndEnd() {
-        assertThat(WordUtils.wrap("nabcdefabcdefn", 2, "\n", false, "(?=n)")).isEqualTo("\nabcdefabcdef\n");
-    }
+
+
 
     @Test
     public void testWrapWithMultipleRegexMatchOfLength0() {

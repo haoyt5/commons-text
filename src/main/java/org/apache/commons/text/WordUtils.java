@@ -839,7 +839,7 @@ public class WordUtils {
                 spaceToWrapAt = matcher.start() + offset;
             }
 
-            if (spaceToWrapAt >= offset) {
+            if (spaceToWrapAt > offset) {
                 // normal case
                 wrappedLine.append(str, offset, spaceToWrapAt);
                 wrappedLine.append(newLineStr);
